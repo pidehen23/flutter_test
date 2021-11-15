@@ -1,22 +1,31 @@
 PODS:
   - AliAPMInterface (1.0.1.12)
-  - AlicloudAPM (1.0.0.1):
+  - AlicloudAPM (1.1.1):
     - AlicloudHAUtil
+    - AliCloudNetworkMonitor
     - AlicloudUtils
     - AliHACore (~> 10.0.3)
     - AliHADataHubAssembler (= 1.0.1.46-downgrade)
     - AliHAMemoryMonitor (= 10.0.3)
     - AliHAPerformanceMonitor (= 10.0.3.2-NO-UT)
     - AliHASecurity (~> 10.0.3)
-  - AlicloudCrash (1.1.1):
+  - AlicloudCrash (1.2.0):
     - AlicloudHAUtil
     - AlicloudUtils
     - AliHACore (~> 10.0.3)
-    - TBCrashReporter (~> 10.0.3)
+    - AliHAMemoryMonitor
+    - JDYThreadTrace (~> 11.1.1)
+    - TBCrashReporter (~> 10.2.0)
   - AlicloudHAUtil (1.0.1):
     - AliHACore
     - TBRest
     - ZipArchive
+  - AliCloudNetworkMonitor (1.0.0):
+    - AlicloudUtils
+    - AliHAProtocol
+    - AliHASecurity
+    - EMASRest (>= 11.1.1.1)
+    - JDYThreadTrace
   - AlicloudSettingService (1.0.0):
     - EMASRest
   - AlicloudTLog (1.0.1.1):
@@ -32,6 +41,7 @@ PODS:
   - AlicloudUTDID (1.5.0.94)
   - AlicloudUtils (1.3.9):
     - AlicloudUTDID
+  - AliCrashReporterInterface (0.0.5)
   - AliHACore (10.0.3.6):
     - AliHALogEngine (>= 10.0.2)
     - AliHAProtocol (>= 10.0.2.1)
@@ -74,6 +84,7 @@ PODS:
     - FBRetainCycleDetector (~> 0.1)
   - FBRetainCycleDetector (0.1.4)
   - JDYThreadTrace (11.1.1.2)
+  - KSCrashTao (1.0.4.0)
   - RemoteDebugChannel (10.0.4.5):
     - AliHAProtocol (>= 10.0.0.3)
     - AliHASecurity
@@ -81,11 +92,13 @@ PODS:
     - TBJSONModel
     - TBRest (>= 1.0.0.18)
     - ZipArchive
-  - TBCrashReporter (10.0.3.1):
+  - TBCrashReporter (10.2.0.1):
+    - AliCrashReporterInterface
     - AliHAProtocol (>= 1.0.5.3)
     - CrashReporter (>= 1.3.6.18)
     - JDYThreadTrace (>= 1.0.0.12)
-    - TBRest (>= 10.0.4.2)
+    - KSCrashTao (~> 1.0.4.0)
+    - TBRest (>= 10.1.0.1)
   - TBJSONModel (0.1.15.1)
   - TBRest (10.1.1.0)
   - TRemoteDebugger (10.0.6.4):
@@ -99,9 +112,10 @@ PODS:
   - ZipArchive (1.4.0)
 
 DEPENDENCIES:
-  - AlicloudAPM (~> 1.0.0)
-  - AlicloudCrash (~> 1.1.0)
-  - AlicloudTLog (~> 1.0.0)
+  - AlicloudAPM (~> 1.1.1)
+  - AlicloudCrash (~> 1.2.0)
+  - AlicloudHAUtil (~> 1.0.1)
+  - AlicloudTLog (~> 1.0.1.1)
 
 SPEC REPOS:
   https://github.com/aliyun/aliyun-specs.git:
@@ -109,10 +123,12 @@ SPEC REPOS:
     - AlicloudAPM
     - AlicloudCrash
     - AlicloudHAUtil
+    - AliCloudNetworkMonitor
     - AlicloudSettingService
     - AlicloudTLog
     - AlicloudUTDID
     - AlicloudUtils
+    - AliCrashReporterInterface
     - AliHACore
     - AliHADataHub4iOS
     - AliHADataHubAssembler
@@ -128,6 +144,7 @@ SPEC REPOS:
     - CrashReporter
     - EMASRest
     - JDYThreadTrace
+    - KSCrashTao
     - RemoteDebugChannel
     - TBCrashReporter
     - TBJSONModel
@@ -142,13 +159,15 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AliAPMInterface: feea5214ffece4ed52a4a75765f4dd24664b588d
-  AlicloudAPM: a785a194564441870824d23a41219ba9f889f9ba
-  AlicloudCrash: 2b08f6fbbf8a7e14596414256c2ee5ee34d0816c
+  AlicloudAPM: 94e9c327f62cd494f58d2288383cda73e45aec0a
+  AlicloudCrash: 98707ca85021db121e84b62dff31e99035127613
   AlicloudHAUtil: 99e5929118fdd73f8ac27807c13e2cded5d4b048
+  AliCloudNetworkMonitor: fb2efb9c88454cf21d5985f332378ef18597108a
   AlicloudSettingService: f78d8433dd722a47c69c5a70ba75c301312f3a85
   AlicloudTLog: 799d2a840be884d9c2ffc6e1ebef2cbf1ee54e08
   AlicloudUTDID: 7323c443dcdf9a73e2224dc6ce51703671d7a765
   AlicloudUtils: 66e0ba6ece62d7dd05e9dd95674b2c7811624c2f
+  AliCrashReporterInterface: 0e839e0aa67c07c012e76fa3208edb6ee7552438
   AliHACore: 631974dc2ab61ffed5ba743e339defb5c9e028c0
   AliHADataHub4iOS: 4847f2cf512af4371a4137c7283b6126eb707f9f
   AliHADataHubAssembler: 3105c6bfe8a62c0bbd10f7d70d5c891d48347a40
@@ -168,13 +187,14 @@ SPEC CHECKSUMS:
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   JDYThreadTrace: 757de93867bac712becb1a3d23a0d1f0bf54f927
+  KSCrashTao: 736d489ba6ed33f025aab5f05e688202b362961b
   RemoteDebugChannel: 6cf6628a167a1c6c530d32f21d16cf38a5a24bd4
-  TBCrashReporter: 126d48189fd8138c9c1233950a1b3203369f46f4
+  TBCrashReporter: 671d7a163934cf1332da155e7e5195b179f6ee05
   TBJSONModel: 2c95a8789bc3d98a2a773dd09c41ddeb902a200b
   TBRest: 36fcaf59c76692eae5acf4c8fd469748d453a327
   TRemoteDebugger: 02207f8e53cfe4af80007402be62d4d198d29dba
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: be521b8ff114a961a8c8bc8a36f2d49d39c655fd
+PODFILE CHECKSUM: 54b5d26f7fae564e89f9a2ee91c938ef740945ab
 
 COCOAPODS: 1.11.2

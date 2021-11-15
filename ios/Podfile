@@ -9,9 +9,10 @@ target 'Runner' do
   use_frameworks!
 
   # Pods for Runner
-  pod 'AlicloudCrash' , '~> 1.1.0'
-  pod 'AlicloudAPM', '~> 1.0.0'
-  pod 'AlicloudTLog', '~> 1.0.0'
+  pod 'AlicloudCrash' , '~> 1.2.0'
+  pod 'AlicloudAPM', '~> 1.1.1'
+  pod 'AlicloudTLog', '~> 1.0.1.1'
+  pod 'AlicloudHAUtil', '~> 1.0.1'
 end
 
 post_install do |installer|
